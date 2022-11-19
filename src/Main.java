@@ -15,7 +15,7 @@ public class Main {
             Scanner scanner = new Scanner(file); //scanner ktery bere vstup ze souboru
             int i = 0;
             while(scanner.hasNextLine()){
-                String jmeno = scanner.next(); //čte jednotlivá slova
+                String jmeno = scanner.next();
                 String prijmeni = scanner.next();
                 String vekStr = scanner.next();
                 int vek = 0;
@@ -35,7 +35,7 @@ public class Main {
             System.out.println(err);
         }
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1; j++) {
                 if (arr[j].prijmeni.compareTo(arr[j + 1].prijmeni) > 0){
                     Clovek c = arr[j];
@@ -55,14 +55,10 @@ public class Main {
 
             }
         }
-
-
-
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i].jmeno + " ");
-            System.out.print(arr[i].prijmeni + " ");
-            System.out.print(arr[i].vek);
+        for (int x = 0; x < arr.length; x++) {
+            System.out.print(arr[x].jmeno + " ");
+            System.out.print(arr[x].prijmeni + " ");
+            System.out.print(arr[x].vek);
             System.out.println("");
         }
 
