@@ -1,0 +1,5 @@
+EE EE 5
+DD DD 4
+DD DD 7
+BB BB 2
+AA AA 4

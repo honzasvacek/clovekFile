@@ -11,11 +11,12 @@ public class Main {
         }*/
 
         try {
-            File file = new File("C:\\Users\\oem\\Desktop\\data.txt"); //vytvoří soubor a argument je url souboru
+            File file = new File("data.txt"); //vytvoří soubor a argument je url souboru
             Scanner scanner = new Scanner(file); //scanner ktery bere vstup ze souboru
             int i = 0;
             while(scanner.hasNextLine()){
-                String jmeno = scanner.next();
+                arr[i] = new Clovek(scanner.next(), scanner.next(), Integer.parseInt(scanner.next()));
+                /*String jmeno = scanner.next();
                 String prijmeni = scanner.next();
                 String vekStr = scanner.next();
                 int vek = 0;
@@ -25,9 +26,8 @@ public class Main {
                 catch (Exception err){
                     System.out.println(err);
                 }
-                int str = Integer.parseInt(vekStr);
                 //System.out.println(data);
-                arr[i] = new Clovek(jmeno, prijmeni, vek);
+                arr[i] = new Clovek(jmeno, prijmeni, vek);*/
                 i++;
             }
         }
@@ -42,12 +42,12 @@ public class Main {
                     arr[j] = arr[j + 1];
                     arr[j + 1] = c;
                 }
-                else if (arr[j].jmeno.compareTo(arr[j + 1].jmeno) > 0){
+                else if (arr[j].prijmeni.compareTo(arr[j + 1].prijmeni) == 0 && arr[j].jmeno.compareTo(arr[j + 1].jmeno) > 0){
                     Clovek c = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = c;
                 }
-                else if (arr[j].vek > arr[j + 1].vek){
+                else if (arr[j].prijmeni.compareTo(arr[j + 1].prijmeni) == 0 && arr[j].vek > arr[j + 1].vek){
                     Clovek c = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = c;
